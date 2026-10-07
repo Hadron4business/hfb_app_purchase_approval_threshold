@@ -21,7 +21,7 @@
             <xpath expr="//page[@name='purchase_delivery_invoice']" position="after">
                 <page string="Approvals" name="po_approvals" invisible="not po_approval_ids">
                     <field name="po_approval_ids" readonly="1">
-                        <tree decoration-success="state == 'approved'" decoration-warning="state == 'pending'">
+                        <list decoration-success="state == 'approved'" decoration-warning="state == 'pending'">
                             <field name="name"/>
                             <field name="min_amount"/>
                             <field name="state" widget="badge"
@@ -29,7 +29,7 @@
                             <field name="user_id" widget="many2one_avatar_user"/>
                             <field name="date"/>
                             <field name="company_currency_id" column_invisible="True"/>
-                        </tree>
+                        </list>
                     </field>
                 </page>
             </xpath>
