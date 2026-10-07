@@ -41,7 +41,7 @@ class PurchaseOrder(models.Model):
     po_level_approval = fields.Boolean(related='company_id.po_level_approval')
     po_approval_next_id = fields.Many2one(
         'purchase.order.approval', string="Next Approval Step", compute='_compute_po_approval_next')
-    po_approval_can_approve = fields.Boolean(compute='_compute_po_approval_next')
+    po_approval_can_approve = fields.Boolean(string="Can Approve", compute='_compute_po_approval_next')
 
     @api.depends_context('uid')
     @api.depends('po_approval_ids.state', 'state')
