@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="purchase_approval_reject_view_form" model="ir.ui.view">
+        <field name="name">purchase.approval.reject.form</field>
+        <field name="model">purchase.approval.reject</field>
+        <field name="arch" type="xml">
+            <form string="Reject Purchase Order">
+                <field name="order_id" invisible="1"/>
+                <p>The order goes back to draft and the buyer is notified.</p>
+                <field name="reason" placeholder="Why is the order rejected?"/>
+                <footer>
+                    <button string="Reject" name="action_reject" type="object" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

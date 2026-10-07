@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_approval_levels" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.approval.levels</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <setting id="po_order_approval" position="attributes">
+                <attribute name="invisible">po_level_approval</attribute>
+            </setting>
+            <setting id="po_order_approval" position="before">
+                <setting id="po_level_approval" company_dependent="1"
+                         help="Approve orders in several levels, each with its own minimum amount and approvers">
+                    <field name="po_level_approval"/>
+                    <div class="content-group" invisible="not po_level_approval">
+                        <div class="row mt16">
+                            <label for="po_level_approval_amount" class="col-lg-4 o_light_label"/>
+                            <field name="po_level_approval_amount"/>
+                        </div>
+                        <div class="row">
+                            <label for="po_level_approval_mode" class="col-lg-4 o_light_label"/>
+                            <field name="po_level_approval_mode"/>
+                        </div>
+                        <div class="mt8">
+                            <button name="%(purchase_approval_level_action)d" icon="oi-arrow-right"
+                                    type="action" string="Approval Levels" class="btn-link"/>
+                        </div>
+                    </div>
+                </setting>
+            </setting>
+        </field>
+    </record>
+
+</odoo>

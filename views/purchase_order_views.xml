@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="purchase_order_form_approval_levels" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.approval.levels</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_approve']" position="attributes">
+                <attribute name="invisible">state != 'to approve' or po_level_approval</attribute>
+            </xpath>
+            <xpath expr="//button[@name='button_approve']" position="after">
+                <field name="po_level_approval" invisible="1"/>
+                <field name="po_approval_can_approve" invisible="1"/>
+                <button name="action_po_level_approve" type="object" string="Approve"
+                        class="oe_highlight" data-hotkey="z"
+                        invisible="not po_approval_can_approve"/>
+                <button name="action_po_level_reject" type="object" string="Reject"
+                        invisible="state != 'to approve' or not po_level_approval"/>
+            </xpath>
+            <xpath expr="//page[@name='purchase_delivery_invoice']" position="after">
+                <page string="Approvals" name="po_approvals" invisible="not po_approval_ids">
+                    <field name="po_approval_ids" readonly="1">
+                        <tree decoration-success="state == 'approved'" decoration-warning="state == 'pending'">
+                            <field name="name"/>
+                            <field name="min_amount"/>
+                            <field name="state" widget="badge"
+                                   decoration-success="state == 'approved'" decoration-warning="state == 'pending'"/>
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="date"/>
+                            <field name="company_currency_id" column_invisible="True"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
