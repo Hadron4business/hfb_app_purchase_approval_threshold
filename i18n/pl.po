@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e\n"
+"Project-Id-Version: Odoo Server 20.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 08:56+0000\n"
-"PO-Revision-Date: 2026-10-07 08:56+0000\n"
+"POT-Creation-Date: 2026-10-07 09:04+0000\n"
+"PO-Revision-Date: 2026-10-07 09:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -15,6 +15,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: hfb_app_purchase_approval_threshold
+#: model:ir.module.module,description:base.module_hfb_app_purchase_approval_threshold
+msgid ""
+"\n"
+"Purchase Approval Levels\n"
+"========================\n"
+"\n"
+"Odoo can ask a manager to approve purchase orders above one amount. Real\n"
+"companies need a ladder: a team leader approves small orders, a director the\n"
+"bigger ones, the CEO the biggest.\n"
+"\n"
+"Define as many approval levels as you need (Purchase > Configuration >\n"
+"Approval Levels), each with a minimum amount and its approvers (users and/or\n"
+"a user group). When an order is confirmed, it waits in \"To Approve\" until\n"
+"every required level has approved it, in order of amount. Approvers get an\n"
+"activity, approve or reject (with a reason) right on the order, and the\n"
+"whole history is kept on the order and in its chatter.\n"
+"\n"
+"Settings (Purchase > Configuration > Settings): compare the thresholds with\n"
+"the total including taxes (default) or the untaxed amount, and require all\n"
+"levels up to the amount or only the highest one.\n"
+msgstr ""
+"\n"
+"Poziomy akceptacji zakupów\n"
+"==========================\n"
+"\n"
+"Odoo potrafi wymagać akceptacji kierownika dla zamówień powyżej jednej kwoty.\n"
+"Firmy potrzebują drabinki: kierownik zespołu zatwierdza małe zamówienia,\n"
+"dyrektor większe, prezes największe.\n"
+"\n"
+"Zdefiniuj dowolną liczbę poziomów akceptacji (Zakupy > Konfiguracja > Poziomy\n"
+"akceptacji), każdy z kwotą minimalną i osobami zatwierdzającymi (użytkownicy\n"
+"i/lub grupa użytkowników). Potwierdzone zamówienie czeka w stanie \"Do\n"
+"zatwierdzenia\", aż zatwierdzi je każdy wymagany poziom, w kolejności kwot.\n"
+"Zatwierdzający dostają aktywność, zatwierdzają lub odrzucają (z podaniem\n"
+"powodu) bezpośrednio na zamówieniu, a cała historia jest zapisana na\n"
+"zamówieniu i w jego chatterze.\n"
+"\n"
+"Ustawienia (Zakupy > Konfiguracja > Ustawienia): porównuj progi z kwotą brutto\n"
+"(domyślnie) lub netto i wymagaj wszystkich poziomów do kwoty zamówienia albo\n"
+"tylko najwyższego.\n"
 
 #. module: hfb_app_purchase_approval_threshold
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_approval_level__active
@@ -53,7 +95,6 @@ msgstr "Kroki akceptacji"
 #. module: hfb_app_purchase_approval_threshold
 #. odoo-python
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_approval_level.py:0
-#, python-format
 msgid "Approval level %s needs at least one approver or a group."
 msgstr ""
 "Poziom akceptacji %s wymaga co najmniej jednej osoby zatwierdzającej lub "
@@ -101,7 +142,6 @@ msgstr "Data zatwierdzenia"
 #. module: hfb_app_purchase_approval_threshold
 #. odoo-python
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_order.py:0
-#, python-format
 msgid "Approved: %s."
 msgstr "Zatwierdzono: %s."
 
@@ -116,16 +156,17 @@ msgid "Archived"
 msgstr "Zarchiwizowane"
 
 #. module: hfb_app_purchase_approval_threshold
+#: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_order__po_approval_can_approve
+msgid "Can Approve"
+msgstr "Może zatwierdzić"
+
+#. module: hfb_app_purchase_approval_threshold
 #: model_terms:ir.ui.view,arch_db:hfb_app_purchase_approval_threshold.purchase_approval_reject_view_form
 msgid "Cancel"
 msgstr "Anuluj"
 
 #. module: hfb_app_purchase_approval_threshold
 #: model:ir.model,name:hfb_app_purchase_approval_threshold.model_res_company
-msgid "Companies"
-msgstr "Firmy"
-
-#. module: hfb_app_purchase_approval_threshold
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_approval_level__company_id
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_order_approval__company_id
 msgid "Company"
@@ -170,7 +211,10 @@ msgstr "Zdefiniuj poziomy akceptacji zakupów"
 #. module: hfb_app_purchase_approval_threshold
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_approval_level__display_name
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_approval_reject__display_name
+#: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_order__display_name
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_order_approval__display_name
+#: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_res_company__display_name
+#: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr "Nazwa wyświetlana"
 
@@ -191,7 +235,10 @@ msgstr ""
 #. module: hfb_app_purchase_approval_threshold
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_approval_level__id
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_approval_reject__id
+#: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_order__id
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_order_approval__id
+#: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_res_company__id
+#: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_res_config_settings__id
 msgid "ID"
 msgstr "ID"
 
@@ -219,9 +266,17 @@ msgstr "Poziom"
 #. module: hfb_app_purchase_approval_threshold
 #. odoo-python
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_order.py:0
-#, python-format
 msgid "Level: %(level)s - %(amount)s"
 msgstr "Poziom: %(level)s - %(amount)s"
+
+#. module: hfb_app_purchase_approval_threshold
+#: model:ir.module.module,summary:base.module_hfb_app_purchase_approval_threshold
+msgid ""
+"Multi-level approval of purchase orders by amount: each level has its own "
+"threshold and approvers"
+msgstr ""
+"Wielopoziomowa akceptacja zamówień zakupu według kwoty: każdy poziom ma "
+"własny próg i osoby zatwierdzające"
 
 #. module: hfb_app_purchase_approval_threshold
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_order__po_approval_next_id
@@ -231,7 +286,6 @@ msgstr "Następny krok akceptacji"
 #. module: hfb_app_purchase_approval_threshold
 #. odoo-python
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_order.py:0
-#, python-format
 msgid ""
 "Only an approver of the next level or a purchase administrator can reject "
 "the order."
@@ -258,21 +312,18 @@ msgstr "Zamówienie"
 #. module: hfb_app_purchase_approval_threshold
 #. odoo-python
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_order.py:0
-#, python-format
 msgid "Order %s is not waiting for approval."
 msgstr "Zamówienie %s nie czeka na akceptację."
 
 #. module: hfb_app_purchase_approval_threshold
 #. odoo-python
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_order.py:0
-#, python-format
 msgid "Order rejected by %(user)s. Reason: %(reason)s"
 msgstr "Zamówienie odrzucone przez: %(user)s. Powód: %(reason)s"
 
 #. module: hfb_app_purchase_approval_threshold
 #. odoo-python
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_order.py:0
-#, python-format
 msgid "Order submitted for approval: %s."
 msgstr "Zamówienie przekazane do akceptacji: %s."
 
@@ -292,11 +343,6 @@ msgstr ""
 "tego poziomu."
 
 #. module: hfb_app_purchase_approval_threshold
-#: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_order__po_approval_can_approve
-msgid "Can Approve"
-msgstr "Może zatwierdzić"
-
-#. module: hfb_app_purchase_approval_threshold
 #: model:mail.activity.type,name:hfb_app_purchase_approval_threshold.mail_activity_type_po_approval
 msgid "Purchase Approval"
 msgstr "Akceptacja zakupu"
@@ -310,6 +356,7 @@ msgstr "Poziom akceptacji zakupów"
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_purchase_order__po_level_approval
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_res_company__po_level_approval
 #: model:ir.model.fields,field_description:hfb_app_purchase_approval_threshold.field_res_config_settings__po_level_approval
+#: model:ir.module.module,shortdesc:base.module_hfb_app_purchase_approval_threshold
 msgid "Purchase Approval Levels"
 msgstr "Poziomy akceptacji zakupów"
 
@@ -339,7 +386,6 @@ msgstr "Odrzuć"
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_order.py:0
 #: model:ir.model,name:hfb_app_purchase_approval_threshold.model_purchase_approval_reject
 #: model_terms:ir.ui.view,arch_db:hfb_app_purchase_approval_threshold.purchase_approval_reject_view_form
-#, python-format
 msgid "Reject Purchase Order"
 msgstr "Odrzuć zamówienie zakupu"
 
@@ -363,7 +409,6 @@ msgstr "Status"
 #. module: hfb_app_purchase_approval_threshold
 #. odoo-python
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_approval_level.py:0
-#, python-format
 msgid "The amount of approval level %s cannot be negative."
 msgstr "Kwota poziomu akceptacji %s nie może być ujemna."
 
@@ -395,7 +440,6 @@ msgstr "Dlaczego zamówienie jest odrzucane?"
 #. module: hfb_app_purchase_approval_threshold
 #. odoo-python
 #: code:addons/hfb_app_purchase_approval_threshold/models/purchase_order.py:0
-#, python-format
 msgid "You are not an approver of the next level of order %s."
 msgstr "Nie zatwierdzasz następnego poziomu zamówienia %s."
 
