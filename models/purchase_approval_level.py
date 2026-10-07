@@ -16,7 +16,7 @@
 # all copies or substantial portions of the Software.
 #
 #################################################################################
-"""	@version	18.0.1.0.0
+"""	@version	19.0.1.0.0
 	@owner  Hadron for Business
 	@author Hadron for Business sp. z o.o.
 	@date   2026.10.07
@@ -65,7 +65,7 @@ class PurchaseApprovalLevel(models.Model):
     def _get_approvers(self):
         """Internal, active users allowed to approve this level."""
         self.ensure_one()
-        users = self.user_ids | self.group_id.sudo().users
+        users = self.user_ids | self.group_id.sudo().all_user_ids
         return users.filtered(lambda u: u.active and not u.share)
 
     def _can_approve(self, user):

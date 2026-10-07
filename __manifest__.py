@@ -39,7 +39,7 @@ Settings (Purchase > Configuration > Settings): compare the thresholds with
 the total including taxes (default) or the untaxed amount, and require all
 levels up to the amount or only the highest one.
 """,
-    'version': "18.0.1.0.0",
+    'version': "19.0.1.0.0",
     'author': "Hadron for Business sp. z o.o.",
     'website': "http://hadronforbusiness.com",
     'license': "OPL-1",
