@@ -1,0 +1,8 @@
+id,name,model_id,group_id/id,operation,domain
+access_purchase_approval_level_user,purchase.approval.level user,purchase.approval.level,purchase.group_purchase_user,r,
+access_purchase_approval_level_manager,purchase.approval.level manager,purchase.approval.level,purchase.group_purchase_manager,crud,
+access_purchase_order_approval_user,purchase.order.approval user,purchase.order.approval,purchase.group_purchase_user,r,
+access_purchase_order_approval_manager,purchase.order.approval manager,purchase.order.approval,purchase.group_purchase_manager,crud,
+access_purchase_approval_reject_user,purchase.approval.reject user,purchase.approval.reject,purchase.group_purchase_user,crud,
+purchase_approval_level_company_rule,purchase.approval.level multi-company,purchase.approval.level,,crud,"[('company_id', 'in', company_ids)]"
+purchase_order_approval_company_rule,purchase.order.approval multi-company,purchase.order.approval,,crud,"[('company_id', 'in', company_ids)]"

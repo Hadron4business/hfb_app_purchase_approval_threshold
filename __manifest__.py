@@ -39,7 +39,7 @@ Settings (Purchase > Configuration > Settings): compare the thresholds with
 the total including taxes (default) or the untaxed amount, and require all
 levels up to the amount or only the highest one.
 """,
-    'version': "19.0.1.0.0",
+    'version': "20.0.1.0.0",
     'author': "Hadron for Business sp. z o.o.",
     'website': "http://hadronforbusiness.com",
     'license': "OPL-1",
@@ -48,8 +48,7 @@ levels up to the amount or only the highest one.
         'purchase',
     ],
     'data': [
-        'security/ir.model.access.csv',
-        'security/purchase_approval_security.xml',
+        'security/ir.access.csv',
         'data/mail_activity_type_data.xml',
         'wizard/purchase_approval_reject_views.xml',
         'views/purchase_approval_level_views.xml',

@@ -34,4 +34,4 @@ Define approval levels with a minimum amount and approvers. Purchase orders wait
 
 ## Status
 
-Odoo 19 build. Missing before publication: icon, banner, tests on 18/19/20.
+Odoo 20 build. Missing before publication: icon, banner, tests on 18/19/20.
